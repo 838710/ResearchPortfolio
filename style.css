@@ -1,0 +1,40 @@
+html {
+  display: flex;
+  height:100vh;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  background: #222;
+}
+
+body::before, body::after {
+  font-weight: bold;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  font-size: 42px;
+  color: #ffffff;
+}
+
+head { 
+  display: block;
+  background-image: url(https://media.giphy.com/media/Ju7l5y9osyymQ/giphy.gif);
+  height:20rem;
+  width:20rem;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border: 5px solid #fff;
+  border-radius: 10px;
+  border-style: dashed;
+}
+
+body::before {
+  display: inline-block;
+  padding-top: 3rem;
+  content: "Get rickrolled";
+}
+/*PwnFunction, Blank-Rick-Roll (2021), GitHub repository, 
+    https://github.com/PwnFunction/Blank-Rick-Roll/blob/main/style.css
+Because I was taught to cite my sources :)
+
+I may or may not actually do this, who knows? But I think it's better to stick with Google Sites
+since it's easier and looks better than what I can do*/
