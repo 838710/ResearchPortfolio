@@ -9,7 +9,7 @@
 
     <body>
         <video autoplay muted loop id="video">
-            <source src="videoplayback.mp4" type="video/mp4">
+            <source src="Media/videoplayback.mp4" type="video/mp4">
         </video>
         <div class="content">
             <h1 id="lol" >you've been rickrolled</h1>
@@ -18,8 +18,8 @@
             </h1>
             <div>
                 <button id="1" onclick="accept()">Accept Your Fate</button>
-                <button id="3" onclick="portfolio()">Actual Portfolio</button>
-                <button id="2" onclick="resist()">Resist Your Fate</button>
+                <button id="2" onclick="portfolio()">Actual Portfolio</button>
+                <button id="3" onclick="resist()">Resist Your Fate</button>
             </div>
           </div>
           <script>
@@ -37,14 +37,29 @@
             }
 
             function resist() {
+                btn3.style.cursor = "not-allowed";
                 vid.muted = false;
-                vol += 10.0;
-                brightness = 100.0-vol;
-                console.log(brightness);
-                vid.volume = vol/100.0;
-                document.getElementById("lol").style.filter = "opacity(" + brightness + "%)";
-                document.getElementById("ree").style.filter = "opacity(" + vol + "%)";
                 document.getElementById("ree").innerText = "That is not an option.";
+                setInterval(fade, 15);
+                    
+                /*for(let i = 0; i < 100; i++){
+                    setTimeout(fade, 300);
+                }*/
+            }
+
+            function fade() {
+                if(vol < 1.01){
+                    vol += 0.01;
+                    brightness = 1-vol;
+                    console.log(brightness);
+                    vid.volume = vol;
+                    document.getElementById("lol").style.opacity = brightness;
+                    document.getElementById("ree").style.opacity = vol;
+                    btn3.style.opacity = brightness;
+                }
+                
+                /*document.getElementById("lol").style.filter = "opacity(" + brightness + "%)";
+                document.getElementById("ree").style.filter = "opacity(" + vol + "%)";*/
             }
 
             function portfolio() {
