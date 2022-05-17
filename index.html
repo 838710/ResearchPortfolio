@@ -8,29 +8,43 @@
 
 
     <body>
-        <video autoplay muted loop id="video">
-            <source src="Media/videoplayback.mp4" type="video/mp4">
-        </video>
-        <div class="content">
-            <h1 id="lol" >you've been rickrolled</h1>
-            <h1 id="ree" style="position: absolute; top: 20px; align-self: center; opacity: var(-vol); color: rgba(128, 4, 4, 100);
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
-            </h1>
-            <div>
-                <button id="1" onclick="accept()">Accept Your Fate</button>
-                <button id="2" onclick="portfolio()">Actual Portfolio</button>
-                <button id="3" onclick="resist()">Resist Your Fate</button>
-            </div>
-          </div>
+        <button id="test" onclick="unhide()" style="z-index: 5; position:relative">This is a button</button>
+        <div id="hide">
+            <video muted loop id="video">
+                <source src="Media/videoplayback.mp4" type="video/mp4">
+            </video>
+            <div class="content">
+                <h1 id="lol" >you've been rickrolled</h1>
+                <h1 id="ree" style="position: absolute; top: 20px; align-self: center; opacity: var(-vol); color: rgba(128, 4, 4, 100);
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
+                </h1>
+                <div>
+                    <button id="1" onclick="accept()">Accept Your Fate</button>
+                    <button id="2" onclick="portfolio()">Actual Portfolio</button>
+                    <button id="3" onclick="unhide()">Resist Your Fate</button>
+                </div>
+              </div>
+        </div>
+        
+        
           <script>
             var vid = document.getElementById("video");
 
             var btn1 = document.getElementById("1");
             var btn2 = document.getElementById("2");
             var btn3 = document.getElementById("3");
+            var btn4 = document.getElementById("test");
 
             let vol = 0.0;
             let brightness = 100.0-vol;
+
+            function unhide() {
+                console.log("ree");
+                btn4.style.opacity = 0;
+                document.getElementById("hide").style.opacity = 1;
+                vid.play();
+                vid.volume = 0.2;
+            }
 
             function accept() {
                 window.location = "https://www.youtube.com/watch?v=dQw4w9WgXcQ";
@@ -40,6 +54,7 @@
                 btn3.style.cursor = "not-allowed";
                 vid.muted = false;
                 document.getElementById("ree").innerText = "That is not an option.";
+                document.getElementById("ree").style.opacity = 0;
                 setInterval(fade, 15);
                     
                 /*for(let i = 0; i < 100; i++){
@@ -52,14 +67,11 @@
                     vol += 0.01;
                     brightness = 1-vol;
                     console.log(brightness);
-                    vid.volume = vol;
+                    vid.volume = vol + 0.2;
                     document.getElementById("lol").style.opacity = brightness;
                     document.getElementById("ree").style.opacity = vol;
                     btn3.style.opacity = brightness;
                 }
-                
-                /*document.getElementById("lol").style.filter = "opacity(" + brightness + "%)";
-                document.getElementById("ree").style.filter = "opacity(" + vol + "%)";*/
             }
 
             function portfolio() {
