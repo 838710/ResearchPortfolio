@@ -7,10 +7,29 @@
     </head>
 
 
-    <body>
-        <button id="test" onclick="unhide()" style="z-index: 5; position:relative">This is a button</button>
+    <body style="margin: 0;">
+        <div id="deception" style="width: 30%; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            <div style="flex-direction: row; display: flex; align-items: center; margin-bottom: 10px; padding: 10px;">
+                <img src="Media/ACL.png" alt="The Academies of Loudoun logo." style="height: 50px; width: 50px; margin-right: 10px;">
+                <h1 style="font-weight: lighter; width: 40%;">Research Portfolio</h1>
+            </div>
+            <div style="background-color:  rgb(0, 174, 255); padding-left: 15px;">
+                <button id="act1" onclick="unhide()" style="z-index: 2; position:relative; font-weight: bold; color: rgb(29, 80, 80);">
+                    Jr/Sr Research Project</button>
+            </div>
+            <div style="padding-left: 15px;">
+                <button id="act2" onclick="unhide()" style="z-index: 2; position:relative">Early Progress</button>
+            </div>
+            <div style="padding-left: 15px;">
+                <button id="act3" onclick="unhide()" style="z-index: 2; position:relative">Conducting Research</button>
+            </div>
+            <div style="padding-left: 15px;">
+                <button id="act4" onclick="unhide()" style="z-index: 2; position:relative">Findings</button>
+            </div>
+        </div>
+        
         <div id="hide">
-            <video muted loop id="video">
+            <video loop id="video" style="z-index: 2;">
                 <source src="Media/videoplayback.mp4" type="video/mp4">
             </video>
             <div class="content">
@@ -18,10 +37,10 @@
                 <h1 id="ree" style="position: absolute; top: 20px; align-self: center; opacity: var(-vol); color: rgba(128, 4, 4, 100);
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
                 </h1>
-                <div>
+                <div id="buttons" style="z-index: -1;">
                     <button id="1" onclick="accept()">Accept Your Fate</button>
                     <button id="2" onclick="portfolio()">Actual Portfolio</button>
-                    <button id="3" onclick="unhide()">Resist Your Fate</button>
+                    <button id="3" onclick="resist()">Resist Your Fate</button>
                 </div>
               </div>
         </div>
@@ -33,17 +52,18 @@
             var btn1 = document.getElementById("1");
             var btn2 = document.getElementById("2");
             var btn3 = document.getElementById("3");
-            var btn4 = document.getElementById("test");
 
             let vol = 0.0;
             let brightness = 100.0-vol;
 
             function unhide() {
-                console.log("ree");
-                btn4.style.opacity = 0;
+                document.getElementById("deception").style.opacity = 0;
                 document.getElementById("hide").style.opacity = 1;
+                document.getElementById("buttons").style.zIndex = "1";
+                vid.style.zIndex = "-1";
                 vid.play();
                 vid.volume = 0.2;
+                console.log(vid.volume);
             }
 
             function accept() {
@@ -67,7 +87,7 @@
                     vol += 0.01;
                     brightness = 1-vol;
                     console.log(brightness);
-                    vid.volume = vol + 0.2;
+                    vid.volume = (vol * 0.8) + 0.2;
                     document.getElementById("lol").style.opacity = brightness;
                     document.getElementById("ree").style.opacity = vol;
                     btn3.style.opacity = brightness;

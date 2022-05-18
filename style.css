@@ -50,6 +50,20 @@ button:hover {
   background: #ddd;
   color: black;
 }
+
+#deception button {
+  background:white;
+  color:black;
+  text-align: left;
+  width: 100%;
+  margin: 0%;
+  padding: 5px;
+  border-radius: 0;
+  font-size: small;
+}
+#deception button:hover {
+  color:rgb(68, 68, 68)
+}
 /*Because I was taught to cite my sources :)
 
 Works Cited:
