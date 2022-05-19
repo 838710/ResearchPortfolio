@@ -9,9 +9,8 @@
 
     <body style="margin: 0;">
         <div id="deception" style="display: flex; flex-direction: row; height: 100vh;">
-            <img src="Media/ACL-removebg-preview.png" id="menu" style="height: 50px; width: 50px; left: 15px; top: 44px; z-index: 2; position: fixed;">
-            <div style="height: 100vh; width: 250px; top: 0; position: fixed; background-color: white; opacity: 0;">
-                <!--<div style="flex-direction: row; display: flex; align-items: center; margin-bottom: 10px; padding: 10px;">-->
+            <img src="Media/ACL-removebg-preview.png" id="menu" style="height: 70px; width: 70px; left: 5px; top: 34px; z-index: 2; position: fixed;">
+            <div style="height: 100vh; width: 250px; top: 0; position: fixed; background-color: white;" id="sidebar">
                 <h1 style="font-weight: lighter; width: 40%; margin: 30px 30px 30px 80px;">Research Portfolio</h1>
                 <div style="background-color:  rgb(0, 174, 255); padding-left: 15px; margin: 10px 0px 10px 0px">
                     <button id="act1" onclick="unhide()" style="z-index: 2; position:relative; font-weight: bold; color: rgb(29, 80, 80);">
@@ -28,8 +27,8 @@
                 </div>
             </div> 
             <div style="width: 100%; z-index: -1;">
-                <div style="background-image: url(Media/Humidity.png); background-attachment: fixed; background-size: 100%; 
-                padding: 20% 10% 20% 10%; text-align: center;"><h1>Investigating the Effect of Relative Humidity on the Filtration
+                <div style="background-image: url(Media/Humidity.png); background-attachment: fixed; background-size: 100%; background-repeat: no-repeat; 
+                padding: 15% 10% 15% 10%; text-align: center;"><h1>Investigating the Effect of Relative Humidity on the Filtration
                     Efficacy of Emissions from 3D Printing
                 </h1></div>
                 <div style="background-color: black; text-align: center; color: white; padding: 1%;">
@@ -38,14 +37,14 @@
                 <div style="display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap;">
                     <div style="margin: 2.5%; width: 20%;">
                         <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Homepage</h4>
-                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%; min-height: 6em;">
                             <li>Acknowledgements</li>
                             <li>Certifications</li>
                         </ul>
                     </div>
                     <div style="margin: 2.5%; width: 20%;">
                         <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Early Progress</h4>
-                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%; min-height: 6em;">
                             <li>Motivations</li>
                             <li>Background Research & Connections to Motivation</li>
                             <li>Preliminary Designs</li>
@@ -53,7 +52,7 @@
                     </div>
                     <div style="margin: 2.5%; width: 20%;">
                         <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Conducting Research</h4>
-                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%; min-height: 6em;">
                             <li>Solutions & Final Design</li>
                             <li>Fabrication/Procedural Challenges</li>
                             <li>Final fabrication/Calibration</li>
@@ -61,7 +60,7 @@
                     </div>
                     <div style="margin: 2.5%; width: 20%;">
                         <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Findings</h4>
-                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%; min-height: 6em;">
                             <li>Reflection</li>
                             <li>Conclusions</li>
                         </ul>
@@ -109,7 +108,7 @@
             </video>
             <div class="content">
                 <h1 id="lol" >you've been rickrolled</h1>
-                <h1 id="ree" style="position: absolute; top: 20px; align-self: center; opacity: var(-vol); color: rgba(128, 4, 4, 100);
+                <h1 id="ree" style="position: absolute; top: 20px; align-self: center; opacity: var(-vol); color: rgba(150, 4, 4, 100);
                 font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;">
                 </h1>
                 <div id="buttons" style="z-index: -1;">
@@ -130,6 +129,19 @@
 
             let vol = 0.0;
             let brightness = 100.0-vol;
+
+            var img = document.getElementById("menu");
+            var side = document.getElementById("sidebar");
+            img.addEventListener("mouseover", menuOut);
+            side.addEventListener("mouseleave", menuIn);
+
+            function menuOut() {
+                side.style.opacity = 1;
+            }
+
+            function menuIn() {
+                side.style.opacity = 0;
+            }
 
             function unhide() {
                 document.getElementById("deception").style.opacity = 0;
@@ -152,10 +164,6 @@
                 document.getElementById("ree").innerText = "That is not an option.";
                 document.getElementById("ree").style.opacity = 0;
                 setInterval(fade, 15);
-                    
-                /*for(let i = 0; i < 100; i++){
-                    setTimeout(fade, 300);
-                }*/
             }
 
             function fade() {
