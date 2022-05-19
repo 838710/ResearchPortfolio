@@ -5,9 +5,15 @@
 #video {
   position: fixed;
   left: 0;
-  top: 0;
+  top: 80%;
   min-width: 100%;
   min-height: 100%;
+  z-index: 2;
+}
+
+li {
+  margin: 2% 0% 2% 0%;
+  list-style-type: square;
 }
 
 .content {
@@ -44,11 +50,18 @@ button {
   color: #fff;
   cursor: pointer;
   border-radius: 20px;
+
+  transition: color 0.2s;
+  transition: background 0.2s;
 }
 
 button:hover {
   background: #ddd;
   color: black;
+}
+
+#deception * {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #deception button {
@@ -59,10 +72,20 @@ button:hover {
   margin: 0%;
   padding: 5px;
   border-radius: 0;
-  font-size: small;
+  font-size: 15px;
+
+  transition: color 0.2s;
 }
 #deception button:hover {
   color:rgb(68, 68, 68)
+}
+
+#menu {
+  transition: transform .4s ease-out;
+}
+
+#menu:hover {
+  transform: rotate(360deg); 
 }
 /*Because I was taught to cite my sources :)
 

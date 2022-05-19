@@ -8,28 +8,103 @@
 
 
     <body style="margin: 0;">
-        <div id="deception" style="width: 30%; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-            <div style="flex-direction: row; display: flex; align-items: center; margin-bottom: 10px; padding: 10px;">
-                <img src="Media/ACL.png" alt="The Academies of Loudoun logo." style="height: 50px; width: 50px; margin-right: 10px;">
-                <h1 style="font-weight: lighter; width: 40%;">Research Portfolio</h1>
-            </div>
-            <div style="background-color:  rgb(0, 174, 255); padding-left: 15px;">
-                <button id="act1" onclick="unhide()" style="z-index: 2; position:relative; font-weight: bold; color: rgb(29, 80, 80);">
-                    Jr/Sr Research Project</button>
-            </div>
-            <div style="padding-left: 15px;">
-                <button id="act2" onclick="unhide()" style="z-index: 2; position:relative">Early Progress</button>
-            </div>
-            <div style="padding-left: 15px;">
-                <button id="act3" onclick="unhide()" style="z-index: 2; position:relative">Conducting Research</button>
-            </div>
-            <div style="padding-left: 15px;">
-                <button id="act4" onclick="unhide()" style="z-index: 2; position:relative">Findings</button>
-            </div>
+        <div id="deception" style="display: flex; flex-direction: row; height: 100vh;">
+            <img src="Media/ACL-removebg-preview.png" id="menu" style="height: 50px; width: 50px; left: 15px; top: 44px; z-index: 2; position: fixed;">
+            <div style="height: 100vh; width: 250px; top: 0; position: fixed; background-color: white; opacity: 0;">
+                <!--<div style="flex-direction: row; display: flex; align-items: center; margin-bottom: 10px; padding: 10px;">-->
+                <h1 style="font-weight: lighter; width: 40%; margin: 30px 30px 30px 80px;">Research Portfolio</h1>
+                <div style="background-color:  rgb(0, 174, 255); padding-left: 15px; margin: 10px 0px 10px 0px">
+                    <button id="act1" onclick="unhide()" style="z-index: 2; position:relative; font-weight: bold; color: rgb(29, 80, 80);">
+                        Homepage</button>
+                </div>
+                <div style="padding-left: 15px; margin: 10px 0px 10px 0px">
+                    <button id="act2" onclick="unhide()" style="z-index: 2; position:relative">Early Progress</button>
+                </div>
+                <div style="padding-left: 15px; margin: 10px 0px 10px 0px">
+                    <button id="act3" onclick="unhide()" style="z-index: 2; position:relative">Conducting Research</button>
+                </div>
+                <div style="padding-left: 15px; margin: 10px 0px 10px 0px">
+                    <button id="act4" onclick="unhide()" style="z-index: 2; position:relative">Findings</button>
+                </div>
+            </div> 
+            <div style="width: 100%; z-index: -1;">
+                <div style="background-image: url(Media/Humidity.png); background-attachment: fixed; background-size: 100%; 
+                padding: 20% 10% 20% 10%; text-align: center;"><h1>Investigating the Effect of Relative Humidity on the Filtration
+                    Efficacy of Emissions from 3D Printing
+                </h1></div>
+                <div style="background-color: black; text-align: center; color: white; padding: 1%;">
+                    <h3>Table of Contents</h3>
+                </div>
+                <div style="display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap;">
+                    <div style="margin: 2.5%; width: 20%;">
+                        <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Homepage</h4>
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                            <li>Acknowledgements</li>
+                            <li>Certifications</li>
+                        </ul>
+                    </div>
+                    <div style="margin: 2.5%; width: 20%;">
+                        <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Early Progress</h4>
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                            <li>Motivations</li>
+                            <li>Background Research & Connections to Motivation</li>
+                            <li>Preliminary Designs</li>
+                        </ul>
+                    </div>
+                    <div style="margin: 2.5%; width: 20%;">
+                        <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Conducting Research</h4>
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                            <li>Solutions & Final Design</li>
+                            <li>Fabrication/Procedural Challenges</li>
+                            <li>Final fabrication/Calibration</li>
+                        </ul>
+                    </div>
+                    <div style="margin: 2.5%; width: 20%;">
+                        <h4 style="text-align: center; padding: 3%; margin-bottom: 0%; background-color: rgb(0, 49, 122); color: white;">Findings</h4>
+                        <ul style="background-color: rgb(228, 245, 255); padding: 3% 0% 3% 10%; margin: 0%">
+                            <li>Reflection</li>
+                            <li>Conclusions</li>
+                        </ul>
+                    </div>
+                </div>
+                <div style="background-color: black; text-align: center; color: white; padding: 1%;"><h3>
+                    Acknowledgements
+                </h3></div>
+                <div style="display: flex; flex-direction: row; justify-content: space-evenly; flex-wrap: wrap;">
+                    <div style="margin: 2.5%; width: 20%;">
+                        <img src="Media/Kantz.PNG" alt="" style="width: 100%;">
+                        <h4 style="text-align: center;">Mr. Kantz</h4>
+                        <p>Thank you for being our research mentor and specifically assisting with our questions 
+                            regarding 3D printing, acquisitions, and experimental design.</p>
+                    </div>
+                    <div style="margin: 2.5%; width: 20%;">
+                        <img src="Media/Ajima.jpg" alt="" style="width: 100%;">
+                        <h4 style="text-align: center;">Mr. Ajima</h4>
+                        <p>Thank you for providing your expertise on the fabrication of our enclosure, 
+                            and allowing us to use the MakerSpace and its tools for our project.</p>
+                    </div>
+                    <div style="margin: 2.5%; width: 20%;">
+                        <img src="Media/MrT.PNG" alt="" style="width: 70%; margin: 0% 15% 0% 15%;">
+                        <h4 style="text-align: center;">Mr. Thirukkurungudi</h4>
+                        <p>Thank you for providing us with supplies, equipment, and tools as needed for our project.</p>
+                    </div>
+                    <div style="margin: 2.5%; width: 20%;">
+                        <img src="Media/ACL2.png" alt="" style="width: 100%;">
+                        <h4 style="text-align: center;">Academies of Loudoun</h4>
+                        <p>Thank you for providing us with a dedicated facility to conduct our research in, 
+                            as well as providing for supplies and equipment for our project.</p>
+                    </div>
+                </div>
+                <div style="background-color: black; text-align: center; color: white; padding: 1%;">
+                    <h3>Certifications</h3>
+                    <p>This project is the work of David Jiang and Anya Ambarish, and is currently ongoing.</p>
+                </div>
+                
+            </div>   
         </div>
         
         <div id="hide">
-            <video loop id="video" style="z-index: 2;">
+            <video loop id="video">
                 <source src="Media/videoplayback.mp4" type="video/mp4">
             </video>
             <div class="content">
@@ -60,6 +135,7 @@
                 document.getElementById("deception").style.opacity = 0;
                 document.getElementById("hide").style.opacity = 1;
                 document.getElementById("buttons").style.zIndex = "1";
+                vid.style.top = "0";
                 vid.style.zIndex = "-1";
                 vid.play();
                 vid.volume = 0.2;
