@@ -10,7 +10,7 @@
     <body style="margin: 0;">
         <div id="deception" style="display: flex; flex-direction: row; height: 100vh;">
             <img src="Media/ACL-removebg-preview.png" id="menu" style="height: 70px; width: 70px; left: 5px; top: 34px; z-index: 2; position: fixed;">
-            <div style="height: 100vh; width: 250px; top: 0; position: fixed; background-color: white;" id="sidebar">
+            <div style="height: 100vh; width: 250px; top: 0; position: fixed; left: -250px; background-color: white;" id="sidebar">
                 <h1 style="font-weight: lighter; width: 40%; margin: 30px 30px 30px 80px;">Research Portfolio</h1>
                 <div style="background-color:  rgb(0, 174, 255); padding-left: 15px; margin: 10px 0px 10px 0px">
                     <button id="act1" onclick="unhide()" style="z-index: 2; position:relative; font-weight: bold; color: rgb(29, 80, 80);">
@@ -136,11 +136,13 @@
             side.addEventListener("mouseleave", menuIn);
 
             function menuOut() {
-                side.style.opacity = 1;
+                side.style.animation = "out 0.3s ease-in forwards";
+                img.style.animation = "spin 0.4s ease-out forwards";
             }
 
             function menuIn() {
-                side.style.opacity = 0;
+                side.style.animation = "in 0.3s ease-in forwards";
+                img.style.animation = "unspin 0.4s ease-out forwards";
             }
 
             function unhide() {
